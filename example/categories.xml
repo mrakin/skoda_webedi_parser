@@ -1,0 +1,723 @@
+<Categories>
+	<Part>
+		<Name> 000 019 819 A</Name>
+		<Group>Podlozka pod sedacku</Group>
+		<Group_2>Test</Group_2>
+	</Part>
+	<Part>
+		<Name> 000 019 819 A</Name>
+		<Group>Podlozka pod sedacku</Group>
+	</Part>
+	<Part>
+		<Name> 000 061 205 B</Name>
+		<Group>Plachta na auto</Group>
+	</Part>
+	<Part>
+		<Name> 000 071 156</Name>
+		<Group>Vak na pricniky</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 056 F</Name>
+		<Group>Vesta</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 C</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 D</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 D</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 E</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 E</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 F</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 F</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 G</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 H</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 J</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 000 093 108 K</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 052 000</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 075 101 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 075 101 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 075 111 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 075 111 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 087 315</Name>
+		<Group>Pouzdro navigace</Group>
+	</Part>
+	<Part>
+		<Name> 1ST 093 860</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 1Z0 071 108</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 1Z0 071 108 A</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 1Z0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 1Z1 064 200</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 1Z1 064 205</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 1Z2 064 200</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 1Z2 064 205</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 3T0 071 108</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 3T0 093 108</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> 3T0 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T0 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T0 998 200 D</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T5 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T9 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T9 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T9 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3T9 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 052 000</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 052 000 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 093 860</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 093 860 A</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 821 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 821 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 822 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V5 821 822 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 827 817</Name>
+		<Group>Lista tesnici</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857    9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857 A  9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857 B  9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857 C  9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857 D  9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 858 857 E  9B9</Name>
+		<Group>Vkladany dil</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 868 280    9B9</Name>
+		<Group>Hacek sitovy</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 868 280    9B9</Name>
+		<Group>Hacek sitovy</Group>
+	</Part>
+	<Part>
+		<Name> 3V9 868 280 A  9B9</Name>
+		<Group>Hacek sitovy</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 052 000 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 052 000 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 071 608</Name>
+		<Group>Kompozit</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 093 860</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 093 860 A</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 A</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E0 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5E9 827 817</Name>
+		<Group>Lista tesnici</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 054 980 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 071 108</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 D</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 D</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 F</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 G</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 G</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 H</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J0 998 200 H</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5J7 071 108</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 052 000</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 071 101 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 071 101 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 071 111</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 071 111</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 071 608</Name>
+		<Group>Kompozit</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 093 860</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> 5JA 821 822 A</Name>
+		<Group>Lapac ND</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JA 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JJ 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JJ 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5JJ 821 821</Name>
+		<Group>Lapace ND</Group>
+	</Part>
+	<Part>
+		<Name> 5JJ 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5JJ 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 052 000</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 071 108</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 071 108 A</Name>
+		<Group>Sada rezervniho kola</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 075 101 A</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 821 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 A  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 821 822 B  9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 5L0 998 200 D</Name>
+		<Group>Zarovky></Group>
+	</Part>
+	<Part>
+		<Name> 5L0 998 200 E</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 5L1 064 200</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 5L1 064 205</Name>
+		<Group>Pedaly</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 052 000</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 052 000 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 052 000 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 075 111</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 093 860</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200 A</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200 B</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V0 998 200 C</Name>
+		<Group>Zarovky</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 821</Name>
+		<Group>Lapace ND</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 822</Name>
+		<Group>Lapace ND</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V6 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 075 101</Name>
+		<Group>Lapace prislusenstvi</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 821</Name>
+		<Group>Lapace ND</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 821    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 822</Name>
+		<Group>Lapace ND</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6V9 821 822    9B9</Name>
+		<Group>Lapace serie</Group>
+	</Part>
+	<Part>
+		<Name> 6Y0 998 200</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> 6Y0 998 200 A</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> BDB 300 001 A</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> BDB 800 001</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> BDB 800 004</Name>
+		<Group>40</Group>
+	</Part>
+	<Part>
+		<Name> DAA 630 001</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> DAA 810 001</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> DAA 810 002</Name>
+		<Group></Group>
+	</Part>
+	<Part>
+		<Name> GFA 093 013 IT</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> GFA 093 016 DE</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> GFA 410 010 DE</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> GFA 410 010 GB</Name>
+		<Group>Lekarnicka</Group>
+	</Part>
+	<Part>
+		<Name> KGA 600 002</Name>
+		<Group>Bocni listy</Group>
+	</Part>
+</Categories>
