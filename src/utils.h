@@ -8,6 +8,12 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <sys/types.h>
+
 typedef enum {
 	tfFILE_NAME,
 	tfFULL
