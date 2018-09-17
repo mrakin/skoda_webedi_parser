@@ -456,7 +456,8 @@ int PrintEachPos(FILE *file, bool print_all)
 		}
 
 		if (!print_all
-		 && !strcmp((char *)p_amount->p_data->c_str(), "0.0"))
+		 && ( !strcmp((char *)p_amount->p_data->c_str(), "0.0")
+ 	       || !strcmp((char *)p_amount->p_data->c_str(), "0") ) )
 		{
 			LogMsg("Pocet 0.0 -> zaznam preskocen");
 			output.zero_count_counter++;

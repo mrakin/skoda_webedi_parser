@@ -53,51 +53,51 @@ string GetTimeString(ETimeFormat time_format)
 	return rslt;
 }
 
-static void PrintMsg(string msg)
+static void PrintMsg( const string & msg )
 {
 	cout <<  GetTimeString(tfFULL) << ": " << msg << endl;
 }
 
-void LogMsg(string msg)
+void LogMsg( string msg )
 {
-	if (debug_level >= 2)
-		PrintMsg(msg);
+	if ( debug_level >= 2 )
+		PrintMsg( msg );
 }
 
-void Error(string msg)
+void Error( string msg )
 {
-	if (debug_level >= 1)
-		PrintMsg("Error: " + msg);
+	if ( debug_level >= 1 )
+		PrintMsg( "Error: " + msg );
 }
 
-void ErrorCode(string msg, int code)
+void ErrorCode( string msg, int code )
 {
 	std::stringstream temp_stream;
 	temp_stream << msg << ": " << code;
 
 	string temp_string = temp_stream.str();
-	Error(temp_string);
+	Error( temp_string );
 }
 
 
-void CriticalError(string msg)
+void CriticalError( const string & msg )
 {
 	PrintMsg(msg);
 
 	exit(-1);
 }
 
-void EnableDebugMode(int level)
+void EnableDebugMode( int level )
 {
 	debug_level = level;
 }
 
-void PrintXmlLine_Char(FILE *file, string tag, char value)
+void PrintXmlLine_Char( FILE *file, string tag, char value )
 {
 	fprintf(file, "<%s>%c</%s>\r\n", tag.c_str(), value, tag.c_str());
 }
 
-void PrintXmlLine_String(FILE *file, string tag, char *value)
+void PrintXmlLine_String( FILE *file, string tag, char *value )
 {
 	fprintf(file, "<%s>%s</%s>\r\n", tag.c_str(), value ? value : "", tag.c_str());
 }

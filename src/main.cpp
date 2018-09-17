@@ -200,21 +200,30 @@ string GetSecreteCode( const string & src )
 }
 
 /*******************************************************************************
- *
+ * <tr data-ri="1" data-rk="1152055" class="ui-widget-content ui-datatable-odd ui-datatable-selectable" role="row" aria-selected="false"><td role="gridcell">2018.09.11</td><td role="gridcell">87</td><td role="gridcell"> 565 821 822    9B9</td><td role="gridcell">Ano</td><td role="gridcell">11</td><td role="gridcell">33</td><td role="gridcell">307K2</td><td role="gridcell">000055</td></tr>
  */
 vector<string> GetDataRkList( const string & src )
 {
-	size_t pos;
+	size_t pos = 0, rk_end = 0;
 	const string val = "data-rk=\"";
-	vector<string> data_rk_list;
-	string rk, temp = src;
+	vector<string> data_rk_list = {};
+	string rk = "", line = "";
 
-	while ( ( pos = temp.find( val ) ) != string::npos )
+	//find next data-rk
+	while ( ( pos = src.find( val, pos ) ) != string::npos )
 	{
 		pos += ( val.length() );
-		temp = temp.substr ( pos );
-		pos = temp.find( "\"" );
-		rk = temp.substr( 0, pos );
+#if 0 //no need to skip these - they are filtered in the HTTP request
+		//select only this line
+		if ( ( line_end = src.find( "</tr>", pos ) ) == string::npos ) break;
+		line = src.substr ( pos, line_end - pos );
+
+		//skip this reference when ">Ne<" found = invalid reference
+		if ( line.find( ">Ne<"  ) != string::npos ) { cout << endl<< "skip rk" << endl; continue; }
+#endif
+		//isolate data-rk value
+		rk_end = src.find( "\"", pos );
+		rk = src.substr( pos, rk_end - pos );
 
 		data_rk_list.push_back( rk );
 	}
@@ -354,7 +363,8 @@ bool ChoosePart_FirstRequest( CurlWrapper & curl_wrapper, const string & code, c
 	return ( curl_wrapper.HTTP_Post( "https://web3.teledin.cz/WebEdi2/faces/secu/dlfr/List.xhtml"
 							   	   , "https://web3.teledin.cz/WebEdi2/faces/secu/index.xhtml"
 								   , headers
-								   , post_data) );
+								   , post_data
+								   , true ) );
 }
 
 
@@ -369,16 +379,185 @@ bool ChoosePart_SecondRequest( CurlWrapper & curl_wrapper, const string & code, 
 
 	string part_number = ReplaceSpaces( part_name, "+" ); // "+BDB+300+001+A";
 
-	string post_data = "javax.faces.partial.ajax=true&javax.faces.source=DlfrListForm%3Adatalist&"
-						"javax.faces.partial.execute=DlfrListForm%3Adatalist&javax.faces.partial.render=DlfrListForm%3A"
-						"datalist&DlfrListForm%3Adatalist=DlfrListForm%3Adatalist&DlfrListForm%3Adatalist_filtering=true&Dl"
-						"frListForm%3Adatalist_encodeFeature=true&DlfrListForm=DlfrListForm&DlfrListForm%3Aindex_focus=&Dl"
-						"frListForm%3Aindex_input=&DlfrListForm%3Apart_focus=&DlfrListForm%3Apart_input="
-					 + part_number
-					 + 	"&DlfrListForm%3Aterm_focus=&DlfrListForm%3Aterm_input=&DlfrListForm%3AreferenceDate_focus=&DlfrListForm%3A"
-						"referenceDate_input=&DlfrListForm%3Adatalist_rppDD=20&DlfrListForm%3Adatalist_rppDD=20&DlfrListForm%3A"
-						"datalist_selection=&javax.faces.ViewState="
- 					 + code;
+
+	string post_data = "javax.faces.partial.ajax=true"
+					   "&javax.faces.source=DlfrListForm%3Adatalist"
+					   "&javax.faces.partial.execute=DlfrListForm%3Adatalist"
+					   "&javax.faces.partial.render=DlfrListForm%3Adatalist"
+					   "&DlfrListForm%3Adatalist=DlfrListForm%3Adatalist"
+					   "&DlfrListForm%3Adatalist_filtering=true"
+					   "&DlfrListForm%3Adatalist_encodeFeature=true"
+					   "&DlfrListForm=DlfrListForm"
+					   "&DlfrListForm%3Aindex_focus="
+					   "&DlfrListForm%3Aindex_input="
+					   "&DlfrListForm%3Apart_focus="
+					   "&DlfrListForm%3Apart_input="
+					 + part_name
+					 +"&DlfrListForm%3Aterm_focus="
+					   "&DlfrListForm%3Aterm_input="
+					   "&DlfrListForm%3AreferenceDate_focus="
+					   "&DlfrListForm%3AreferenceDate_input="
+					   "&DlfrListForm%3Adatalist%3Aj_idt85_input=on"
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist%3Aj_idt88="
+					   "&DlfrListForm%3Adatalist%3Aj_idt91="
+					   "&DlfrListForm%3Adatalist%3Aj_idt93="
+					   "&DlfrListForm%3Adatalist%3Aj_idt95_focus="
+					   "&DlfrListForm%3Adatalist%3Aj_idt95_input=A"
+					   "&DlfrListForm%3Adatalist%3Aj_idt101="
+					   "&DlfrListForm%3Adatalist%3Aj_idt104="
+					   "&DlfrListForm%3Adatalist%3Aj_idt107="
+					   "&DlfrListForm%3Adatalist%3Aj_idt110="
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist_selection="
+					   "&javax.faces.ViewState="
+	 	 	 	 	 + code;
+
+	return ( curl_wrapper.HTTP_Post( "https://web3.teledin.cz/WebEdi2/faces/secu/dlfr/List.xhtml"
+							   	   , "Referer: https://web3.teledin.cz/WebEdi2/faces/secu/index.xhtml"
+								   , headers
+								   , post_data
+								   , true ) );
+}
+
+/*******************************************************************************
+ *
+ */
+bool ChoosePart_ThirdRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
+{
+	list<string> headers = {
+		   "application/xml, text/xml, */*; q=0.01"
+	};
+
+	string part_number = ReplaceSpaces( part_name, "+" ); // "+BDB+300+001+A";
+
+
+	string post_data = "javax.faces.partial.ajax=true"
+					   "&javax.faces.source=DlfrListForm%3Adatalist%3Aj_idt85"
+					   "&javax.faces.partial.execute=DlfrListForm%3Adatalist%3Aj_idt85"
+					   "&javax.faces.partial.render=DlfrListForm%3Adatalist+DlfrListForm%3Adatalist%3AviewButton"
+					   "&javax.faces.behavior.event=valueChange"
+					   "&javax.faces.partial.event=change"
+					   "&DlfrListForm=DlfrListForm"
+					   "&DlfrListForm%3Aindex_focus="
+					   "&DlfrListForm%3Aindex_input="
+					   "&DlfrListForm%3Apart_focus="
+					   "&DlfrListForm%3Apart_input="
+					 + part_name
+					 + "&DlfrListForm%3Aterm_focus="
+					   "&DlfrListForm%3Aterm_input="
+					   "&DlfrListForm%3AreferenceDate_focus="
+					   "&DlfrListForm%3AreferenceDate_input="
+					   "&DlfrListForm%3Adatalist%3Aj_idt85_input=on"
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist_selection="
+					   "&javax.faces.ViewState="
+					 + code;
+
+	return ( curl_wrapper.HTTP_Post( "https://web3.teledin.cz/WebEdi2/faces/secu/dlfr/List.xhtml"
+							   	   , "Referer: https://web3.teledin.cz/WebEdi2/faces/secu/index.xhtml"
+								   , headers
+								   , post_data
+								   , true ) );
+}
+
+/*******************************************************************************
+ *
+ */
+bool ChoosePart_FourthRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
+{
+	list<string> headers = {
+		   "application/xml, text/xml, */*; q=0.01"
+	};
+
+	string part_number = ReplaceSpaces( part_name, "+" ); // "+BDB+300+001+A";
+
+
+	string post_data = "javax.faces.partial.ajax=true"
+					   "&javax.faces.source=DlfrListForm%3Adatalist"
+					   "&javax.faces.partial.execute=DlfrListForm%3Adatalist"
+					   "&javax.faces.partial.render=DlfrListForm%3Adatalist"
+					   "&DlfrListForm%3Adatalist=DlfrListForm%3Adatalist"
+					   "&DlfrListForm%3Adatalist_filtering=true"
+					   "&DlfrListForm%3Adatalist_encodeFeature=true"
+					   "&DlfrListForm=DlfrListForm"
+					   "&DlfrListForm%3Aindex_focus="
+					   "&DlfrListForm%3Aindex_input="
+					   "&DlfrListForm%3Apart_focus="
+					   "&DlfrListForm%3Apart_input="
+					 + part_name
+					 + "&DlfrListForm%3Aterm_focus="
+					   "&DlfrListForm%3Aterm_input="
+					   "&DlfrListForm%3AreferenceDate_focus="
+					   "&DlfrListForm%3AreferenceDate_input="
+					   "&DlfrListForm%3Adatalist%3Aj_idt85_input=on"
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist%3Aj_idt88="
+					   "&DlfrListForm%3Adatalist%3Aj_idt91="
+					   "&DlfrListForm%3Adatalist%3Aj_idt93="
+					   "&DlfrListForm%3Adatalist%3Aj_idt95_focus="
+					   "&DlfrListForm%3Adatalist%3Aj_idt95_input="
+					   "&DlfrListForm%3Adatalist%3Aj_idt101="
+					   "&DlfrListForm%3Adatalist%3Aj_idt104="
+					   "&DlfrListForm%3Adatalist%3Aj_idt107="
+					   "&DlfrListForm%3Adatalist%3Aj_idt110="
+					   "&DlfrListForm%3Adatalist_rppDD=20"
+					   "&DlfrListForm%3Adatalist_selection="
+					   "&javax.faces.ViewState="
+					+ code;
+
+	return ( curl_wrapper.HTTP_Post( "https://web3.teledin.cz/WebEdi2/faces/secu/dlfr/List.xhtml"
+							   	   , "Referer: https://web3.teledin.cz/WebEdi2/faces/secu/index.xhtml"
+								   , headers
+								   , post_data
+								   , true ) );
+}
+
+/*******************************************************************************
+ *
+ */
+bool ChoosePart_FifthRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
+{
+	list<string> headers = {
+		   "application/xml, text/xml, */*; q=0.01"
+	};
+
+	string part_number = ReplaceSpaces( part_name, "+" ); // "+BDB+300+001+A";
+
+
+	string post_data = "javax.faces.partial.ajax=true"
+			"&javax.faces.source=DlfrListForm%3Adatalist"
+			"&javax.faces.partial.execute=DlfrListForm%3Adatalist"
+			"&javax.faces.partial.render=DlfrListForm%3Adatalist"
+			"&DlfrListForm%3Adatalist=DlfrListForm%3Adatalist"
+			"&DlfrListForm%3Adatalist_filtering=true"
+			"&DlfrListForm%3Adatalist_encodeFeature=true"
+			"&DlfrListForm=DlfrListForm"
+			"&DlfrListForm%3Aindex_focus="
+			"&DlfrListForm%3Aindex_input="
+			"&DlfrListForm%3Apart_focus="
+			"&DlfrListForm%3Apart_input="
+          + part_name
+		  + "&DlfrListForm%3Aterm_focus="
+			"&DlfrListForm%3Aterm_input="
+			"&DlfrListForm%3AreferenceDate_focus="
+			"&DlfrListForm%3AreferenceDate_input="
+			"&DlfrListForm%3Adatalist%3Aj_idt85_input=on"
+			"&DlfrListForm%3Adatalist_rppDD=20"
+			"&DlfrListForm%3Adatalist%3Aj_idt88="
+			"&DlfrListForm%3Adatalist%3Aj_idt91="
+			"&DlfrListForm%3Adatalist%3Aj_idt93="
+			"&DlfrListForm%3Adatalist%3Aj_idt95_focus="
+			"&DlfrListForm%3Adatalist%3Aj_idt95_input=A"
+			"&DlfrListForm%3Adatalist%3Aj_idt101="
+			"&DlfrListForm%3Adatalist%3Aj_idt104="
+			"&DlfrListForm%3Adatalist%3Aj_idt107="
+			"&DlfrListForm%3Adatalist%3Aj_idt110="
+			"&DlfrListForm%3Adatalist_rppDD=20"
+			"&DlfrListForm%3Adatalist_selection="
+			"&javax.faces.ViewState="
+			+ code;
 
 	return ( curl_wrapper.HTTP_Post( "https://web3.teledin.cz/WebEdi2/faces/secu/dlfr/List.xhtml"
 							   	   , "Referer: https://web3.teledin.cz/WebEdi2/faces/secu/index.xhtml"
@@ -533,7 +712,6 @@ bool ForEachReference( CurlWrapper & curl_wrapper, const string & code, const st
 		}
 		else
 #endif
-
 		if ( ReadFile( curl_wrapper.GetResponse( ), output_file.Get( ) , output_file.GetAll( ) ) != 0 ) return -4;
 
 		reference_counter++;
@@ -556,17 +734,20 @@ bool ForEachPartNumber( CurlWrapper & curl_wrapper, const string & code, const v
 		 * Select 1 item
 		 */
 		if ( ChoosePart_FirstRequest( curl_wrapper, code, i ) ) return -1;
-//		if ( ChoosePart_SecondRequest( curl_wrapper, code, i ) ) return -2; the application seems to work without this code
+		if ( ChoosePart_SecondRequest( curl_wrapper, code, i ) ) return -2;
+		if ( ChoosePart_ThirdRequest( curl_wrapper, code, i ) ) return -3;
+		if ( ChoosePart_FourthRequest( curl_wrapper, code, i ) ) return -4;
+		if ( ChoosePart_FifthRequest( curl_wrapper, code, i ) ) return -5;
 
 		vector<string> data_rk_list = GetDataRkList( curl_wrapper.GetResponse( ) );
 
 		if ( ForEachReference( curl_wrapper, code, i, data_rk_list, output_files ) ) return -3;
 
 		part_number_counter++;
-
+#if 0  //only for debug purposes
 		if ( part_number_counter > 3 )
 			break;
-
+#endif
 		cout << "\rOdvolávky pro díl č." << part_number_counter << " z " << part_numbers.size() <<" uloženy" << flush;
 	}
 
@@ -679,7 +860,9 @@ int ParseArguments( int argc, char *argv[], bool & create_categories )
 int main(int argc, char *argv[])
 {
 	LogMsg("Application start");
-	//	static DebugTime debug_time;
+
+	static DebugTime debug_time;
+
 	bool create_categories = false;
 
 	if ( ParseArguments( argc, argv, create_categories ) )

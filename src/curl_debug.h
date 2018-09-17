@@ -124,7 +124,7 @@ int CurlDebug::my_trace( curl_infotype type, char *data, size_t size )
 
   switch(type) {
   case CURLINFO_TEXT:
-    fprintf(stderr, "== Info: %s", data);
+    //fprintf(stderr, "== Info: %s", data);
     /* no break */
   default: /* in case a new one is introduced to shock us */
     return 0;

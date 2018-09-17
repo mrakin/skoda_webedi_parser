@@ -178,11 +178,12 @@ string CurlWrapper::GetSessionId( void )
 
 /******************************************************************************
  *
- */
-size_t ResponseToBuffer_Callback( void *ptr, size_t size, size_t nmemb, string * p_buffer )
+ */size_t ResponseToBuffer_Callback( void *ptr, size_t size, size_t nmemb, string * p_buffer )
+
 {
 	int copy_size = size * nmemb;
-	p_buffer->append( ( char * )ptr, copy_size );
+	p_buffer->append( ( char * )ptr, copy_size );
+
 	return copy_size;
 }
 
