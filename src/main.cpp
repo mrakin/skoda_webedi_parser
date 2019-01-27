@@ -339,7 +339,21 @@ string ReplaceSpaces( const string & src, const string & replace )
 }
 
 /*******************************************************************************
- *
+ * DlfrListForm=DlfrListForm
+ * &DlfrListForm%3Aindex_focus=
+ * &DlfrListForm%3Aindex_input=
+ * &DlfrListForm%3Apart_focus=
+ * &DlfrListForm%3Apart_input=%20BDB%20300%20001%20A
+ * &DlfrListForm%3Aterm_focus=&DlfrListForm%3Aterm_input=
+ * &DlfrListForm%3AreferenceDate_focus=
+ * &DlfrListForm%3AreferenceDate_input=
+ * &javax.faces.ViewState=3702289110166413448%3A-3154206968032238973
+ * &javax.faces.source=DlfrListForm%3Apart
+ * &javax.faces.partial.event=change
+ * &javax.faces.partial.execute=DlfrListForm%3Apart%20DlfrListForm%3Apart
+ * &javax.faces.partial.render=DlfrListForm
+ * &javax.faces.behavior.event=change
+ * &javax.faces.partial.ajax=true
  */
 bool ChoosePart_FirstRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
 {
@@ -421,7 +435,26 @@ bool ChoosePart_SecondRequest( CurlWrapper & curl_wrapper, const string & code, 
 }
 
 /*******************************************************************************
- *
+ * javax.faces.partial.ajax=true
+ * &javax.faces.source=DlfrListForm%3Adatalist
+ * &javax.faces.partial.execute=DlfrListForm%3Adatalist
+ * &javax.faces.partial.render=DlfrListForm%3Adatalist
+ * &DlfrListForm%3Adatalist=DlfrListForm%3Adatalist
+ * &DlfrListForm%3Adatalist_filtering=true
+ * &DlfrListForm%3Adatalist_encodeFeature=true
+ * &DlfrListForm=DlfrListForm
+ * &DlfrListForm%3Aindex_focus=
+ * &DlfrListForm%3Aindex_input=
+ * &DlfrListForm%3Apart_focus=
+ * &DlfrListForm%3Apart_input=+BDB+300+001+A
+ * &DlfrListForm%3Aterm_focus=
+ * &DlfrListForm%3Aterm_input=
+ * &DlfrListForm%3AreferenceDate_focus=
+ * &DlfrListForm%3AreferenceDate_input=
+ * &DlfrListForm%3Adatalist_rppDD=20
+ * &DlfrListForm%3Adatalist_rppDD=20
+ * &DlfrListForm%3Adatalist_selection=
+ * &javax.faces.ViewState=3702289110166413448%3A-3154206968032238973
  */
 bool ChoosePart_ThirdRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
 {
@@ -463,7 +496,26 @@ bool ChoosePart_ThirdRequest( CurlWrapper & curl_wrapper, const string & code, c
 }
 
 /*******************************************************************************
- *
+ * javax.faces.partial.ajax=true
+ * &javax.faces.source=DlfrListForm%3Adatalist
+ * &javax.faces.partial.execute=DlfrListForm%3Adatalist
+ * &javax.faces.partial.render=DlfrListForm%3Adatalist%3AviewButton
+ * &javax.faces.behavior.event=rowSelect
+ * &javax.faces.partial.event=rowSelect
+ * &DlfrListForm%3Adatalist_instantSelectedRowKey=1141773
+ * &DlfrListForm=DlfrListForm
+ * &DlfrListForm%3Aindex_focus=
+ * &DlfrListForm%3Aindex_input=
+ * &DlfrListForm%3Apart_focus=
+ * &DlfrListForm%3Apart_input=+BDB+300+001+A
+ * &DlfrListForm%3Aterm_focus=
+ * &DlfrListForm%3Aterm_input=
+ * &DlfrListForm%3AreferenceDate_focus=
+ * &DlfrListForm%3AreferenceDate_input=
+ * &DlfrListForm%3Adatalist_rppDD=20
+ * &DlfrListForm%3Adatalist_rppDD=20
+ * &DlfrListForm%3Adatalist_selection=1141773
+ * &javax.faces.ViewState=3702289110166413448%3A-3154206968032238973
  */
 bool ChoosePart_FourthRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name )
 {
@@ -602,7 +654,7 @@ bool GetReference_FirstRequest( CurlWrapper & curl_wrapper, const string & code,
 bool GetReference_SecondRequest( CurlWrapper & curl_wrapper, const string & code, const string & part_name, const string & data_rk )
 {
 	list<string> headers = {
-		   "application/xml, text/xml, */*; q=0.01"
+		   "Accept: application/xml, text/xml, */*; q=0.01"
 	};
 
 	string part_number = ReplaceSpaces( part_name, "+" ); // "+BDB+300+001+A";
@@ -632,7 +684,10 @@ bool GetReference_SecondRequest( CurlWrapper & curl_wrapper, const string & code
 bool ExportReference( CurlWrapper & curl_wrapper, const string & code )
 {
 	list<string> headers = {
-		   "text/html,application/xhtml+xm…plication/xml;q=0.9,*/*;q=0.8"
+		   "Accept: text/html,application/xhtml+xm…plication/xml;q=0.9,*/*;q=0.8"
+		   , "Upgrade-Insecure-Requests: 1"
+
+//			, "Cookie: primefaces.download=true;"
 	};
 
 	string post_data = "DlfrForm=DlfrForm&DlfrForm%3AdatalistPrijato_scrollState=0%2C0&DlfrForm%3A"
@@ -717,7 +772,7 @@ bool ForEachReference( CurlWrapper & curl_wrapper, const string & code, const st
 		reference_counter++;
 
 		char buf[100];
-		sprintf(buf, "Odvolávka #%.03d zpracována", reference_counter);
+		sprintf(buf, "\r\nOdvolávka #%.03d zpracována", reference_counter);
 		LogMsg(buf);
 	}
 	return false;
@@ -734,7 +789,7 @@ bool ForEachPartNumber( CurlWrapper & curl_wrapper, const string & code, const v
 		 * Select 1 item
 		 */
 		if ( ChoosePart_FirstRequest( curl_wrapper, code, i ) ) return -1;
-		if ( ChoosePart_SecondRequest( curl_wrapper, code, i ) ) return -2;
+//		if ( ChoosePart_SecondRequest( curl_wrapper, code, i ) ) return -2;
 		if ( ChoosePart_ThirdRequest( curl_wrapper, code, i ) ) return -3;
 		if ( ChoosePart_FourthRequest( curl_wrapper, code, i ) ) return -4;
 		if ( ChoosePart_FifthRequest( curl_wrapper, code, i ) ) return -5;
@@ -775,6 +830,7 @@ int ProcessCurl( CFiles & output_files )
 	if ( GetLoginPage( curl_wrapper ) ) return -1;
 
 	code = GetSecreteCode( curl_wrapper.GetResponse( ) );
+    if (code == "") return -11;
 	session_id = curl_wrapper.GetSessionId( );
 
 	/*
@@ -791,10 +847,12 @@ int ProcessCurl( CFiles & output_files )
 	 * Get list of references
 	 */
 	code = GetSecreteCode( curl_wrapper.GetResponse( ) );
+    if (code == "") return -31;
 
 	if ( PostIndexPage( curl_wrapper, code ) ) return -4;
 
 	code = GetSecreteCode( curl_wrapper.GetResponse( ) );
+    if (code == "") return -41;
 
 	vector<string> part_numbers = ParsePartNumbers( curl_wrapper.GetResponse( ) );
 
@@ -872,7 +930,15 @@ int main(int argc, char *argv[])
 
 	CFiles output_files( create_categories );
 
-	if ( ProcessCurl( output_files ) ) Error("HTTP error");
+	int http_rslt = ProcessCurl( output_files );
+
+	if ( http_rslt != 0 )
+	{
+		stringstream ss;
+		ss << "HTTP error (" << http_rslt << ")";
+
+		Error( ss.str() );
+	}
 
 	LogMsg("Application end");
 
